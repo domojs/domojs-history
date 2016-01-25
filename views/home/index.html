@@ -1,0 +1,11 @@
+<ul id="measures" class="list-group">
+    
+</ul> 
+
+<script>
+    $.getJSON('/api/history', function(data){
+        $.each(data, function(){
+            $('<li class="list-gorup-item"><a href="#history/'+this.id+'">'+this.id+'</a></li>').appendTo('#measures');
+        })
+    })
+</script>  

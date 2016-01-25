@@ -1,0 +1,32 @@
+<div id="timeChart"></div> 
+
+<script src="assets/history/js/zoomcharts.js"></script>
+<script>
+    new TimeChart({
+        container:$('#timeChart')[0],
+        assetsUrlBase:'assets/history/css/',
+        data:{
+            units:['m'],
+            url:'/api/history/meteo.temperature'
+        },
+        valueAxisDefault:{ title:"Temperature" },
+                series:[
+                    {
+                        name:"Measured tempareture",
+                        id:"series1",
+                        type:"line",
+                        data:{
+                            index: 1,
+                            aggregation:"avg",
+                        },
+                        style:{
+                            lineColor: "orange",
+                            lineWidth: 2,
+                            marker:{
+                                shape:"circle"
+                            }
+                        }
+                    }
+                ]
+    });
+</script> 
